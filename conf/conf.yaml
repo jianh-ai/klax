@@ -1,0 +1,348 @@
+# 2025-7-16
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: true
+keep-alive-interval: 30
+find-process-mode: strict
+external-controller: 127.0.0.1:9090
+unified-delay: true
+tcp-concurrent: true
+
+# 远程订阅
+proxy-providers:
+  provider1:
+    type: http
+    url: "https://su.xfjhchr.com:8888/api/v1/client/subscribe?token=65266a9188b2dc4475e2814b1258ec44"
+    interval: 86400
+    path: ./provider1.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  provider2:
+    type: http
+    url: "http://162.19.79.201:81/s/1e30c34216b3da3690b228e3cc7e4e78"
+    interval: 86400
+    path: ./provider2.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  provider3:
+    type: http
+    url: "https://xn--cp3a08l.com/api/v1/client/subscribe?token=bc9677e84e0eaa5fd7fbfa60066b2c6b"
+    interval: 86400
+    path: ./provider3.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+dns:
+  enable: true
+  prefer-h3: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  default-nameserver:
+    - system
+    - 223.5.5.5
+    - 119.29.29.29
+    - 8.8.4.4
+    - 1.1.1.1
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '+.lan'
+    - localhost.ptlogin2.qq.com
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - tls://8.8.4.4
+    - tls://1.1.1.1
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+proxies:
+# 代理面板
+proxy-groups:
+  # 代理命名
+  # 分流节点
+  - name: ChatGPT
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/ChatGPT.png
+    proxies:
+      - 狮城手动
+      - 日本手动
+      - 美国手动
+
+  - name: Copilot
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Copilot.png
+    proxies:
+      - 香港手动
+      - 狮城手动
+      - 美国手动
+
+  - name: YouTube
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/YouTube.png
+    proxies:
+      - 香港自动
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 香港手动
+      - 狮城手动
+      - 日本手动
+      - 美国手动
+
+  - name: 哔哩哔哩
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Bilibili.png
+    proxies:
+      - DIRECT
+      - 香港自动
+      - 台湾自动
+      - 香港手动
+      - 台湾手动
+
+  - name: 苹果服务
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Apple.png
+    proxies:
+      - DIRECT
+
+  - name: 国外网站
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Global.png
+    proxies:
+      - 香港自动
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 香港手动
+      - 狮城手动
+      - 日本手动
+      - 美国手动     
+
+  - name: 国内网站
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Domestic.png
+    proxies:
+      - DIRECT
+
+  - name: 兜底分流
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Final.png
+    proxies:
+      - 香港自动
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 台湾自动
+
+  # 地区节点
+  # 手动切换
+  - name: 香港手动
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/HongKong.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 港|🇭🇰|HK|(?i)Hong
+
+  - name: 狮城手动
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Singapore.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 新|🇸🇬|狮|SG|(?i)Singapore
+      
+  - name: 日本手动
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Japan.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 日|东京|🇯🇵|JP|(?i)Japan
+     
+  - name: 台湾手动
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/TaiWan.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
+
+  - name: 美国手动
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/UnitedStates.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
+    
+  # 自动选择
+  - name: 香港自动
+    type: url-test
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/HongKong.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 港|🇭🇰|HK|(?i)Hong
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+  - name: 狮城自动
+    type: url-test
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Singapore.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 新|🇸🇬|狮|SG|(?i)Singapore
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+      
+  - name: 日本自动
+    type: url-test
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/Japan.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 日|东京|🇯🇵|JP|(?i)Japan
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+  - name: 台湾自动
+    type: url-test
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/TaiWan.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+  - name: 美国自动
+    type: url-test
+    icon: https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/icon/UnitedStates.png
+    use:
+      - provider1
+      - provider2
+      - provider3
+    filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+# 规则集
+rule-providers:
+  # 规则集命名
+  Antiads:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/Adrules.list"
+    path: ./ruleset/Antiads.list
+    interval: 86400
+
+  Apple:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/Apple.list"
+    path: ./ruleset/Apple.list
+    interval: 86400
+
+  BiliBili:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/BiliBili.list"
+    path: ./ruleset/BiliBili.list
+    interval: 86400
+
+  Copilot:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/Copilot.list"
+    path: ./ruleset/Copilot.list
+    interval: 86400
+
+  Domestic:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/Domestic.list"
+    path: ./ruleset/Domestic.list
+    interval: 86400
+
+  Global:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/Global.list"
+    path: ./ruleset/Global.list
+    interval: 86400
+
+  OpenAI:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/OpenAI.list"
+    path: ./ruleset/OpenAI.list
+    interval: 86400
+
+  OtherProxy:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/OtherProxy.list"
+    path: ./ruleset/OtherProxy.list
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/rule/YouTube.list"
+    path: ./ruleset/YouTube.list
+    interval: 86400
+
+# 规则集命名+代理命名
+rules:
+ # - RULE-SET,Antiads,REJECT,no-resolve
+  - RULE-SET,Apple,苹果服务,no-resolve
+  - RULE-SET,BiliBili,哔哩哔哩,no-resolve
+  - RULE-SET,Copilot,Copilot,no-resolve
+  - RULE-SET,Domestic,国内网站,no-resolve
+  - RULE-SET,Global,国外网站,no-resolve
+  - RULE-SET,OpenAI,ChatGPT,no-resolve 
+  - RULE-SET,OtherProxy,国外网站,no-resolve
+  - RULE-SET,YouTube,YouTube,no-resolve
+  - GEOIP,Lan,DIRECT,no-resolve
+  - GEOIP,CN,国内网站,no-resolve
+  - MATCH,兜底分流
