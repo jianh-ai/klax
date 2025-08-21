@@ -19,7 +19,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "https://su.xfjhchr.com:8888/api/v1/client/subscribe?token=65266a9188b2dc4475e2814b1258ec44"
+    url: "https://1.nfsqttt.us/nfsq/?token=f73c274e8c87851f21ee29d2bf1878a2"
     interval: 86400
     path: ./provider1.yaml
     health-check:
@@ -29,7 +29,7 @@ proxy-providers:
 
   provider2:
     type: http
-    url: "http://162.19.79.201:81/s/1e30c34216b3da3690b228e3cc7e4e78"
+    url: ""
     interval: 86400
     path: ./provider2.yaml
     health-check:
@@ -39,7 +39,7 @@ proxy-providers:
 
   provider3:
     type: http
-    url: "https://xn--cp3a08l.com/api/v1/client/subscribe?token=bc9677e84e0eaa5fd7fbfa60066b2c6b"
+    url: ""
     interval: 86400
     path: ./provider3.yaml
     health-check:
