@@ -1,4 +1,4 @@
-# 2025-7-16
+# 2025-08-26
 
 port: 7890
 socks-port: 7891
@@ -29,7 +29,7 @@ proxy-providers:
 
   provider2:
     type: http
-    url: ""
+    url: "https://dash.pqjc.site/api/v1/client/subscribe?token=bc9677e84e0eaa5fd7fbfa60066b2c6b"
     interval: 86400
     path: ./provider2.yaml
     health-check:
@@ -39,7 +39,7 @@ proxy-providers:
 
   provider3:
     type: http
-    url: ""
+    url: "https://liangxin.xyz/api/v1/liangxin?OwO=4aeb4767a72e90166a820ed47afb04a3"
     interval: 86400
     path: ./provider3.yaml
     health-check:
@@ -325,7 +325,7 @@ rule-providers:
     path: ./ruleset/Gemini.list
     interval: 86400
 
-  JP:
+  Japan:
     type: http
     behavior: domain
     format: text
@@ -349,7 +349,7 @@ rule-providers:
   #   path: ./ruleset/OtherProxy.list
   #   interval: 86400
 
-  US:
+  America:
     type: http
     behavior: domain
     format: text
@@ -374,10 +374,10 @@ rules:
   - RULE-SET,Domestic,国内网站,no-resolve
   - RULE-SET,Gemini,Gemini,no-resolve
   # - RULE-SET,Global,国外网站,no-resolve
-  - RULE-SET,JP,日本自动,no-resolve
+  - RULE-SET,Japan,日本自动,no-resolve
   - RULE-SET,OpenAI,ChatGPT,no-resolve 
   # - RULE-SET,OtherProxy,国外网站,no-resolve
-  - RULE-SET,US,美国自动,no-resolve
+  - RULE-SET,America,美国自动,no-resolve
   # - RULE-SET,YouTube,YouTube,no-resolve
   - GEOIP,Lan,DIRECT,no-resolve
   - GEOIP,CN,国内网站,no-resolve
