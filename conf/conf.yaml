@@ -20,7 +20,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "https://1.nfsqttt.us/nfsq/?token=f73c274e8c87851f21ee29d2bf1878a2"
+    url: "https://1.811200.xyz/oosaka/930fdefef8c7a47c195b81e5797d5c07"
     interval: 86400
     path: ./provider1.yaml
     health-check:
