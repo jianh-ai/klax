@@ -1,5 +1,5 @@
-# 2025-08-26
-# raw = https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
+#!2025-08-29
+#!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
 port: 7890
 socks-port: 7891
