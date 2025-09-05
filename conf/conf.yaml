@@ -1,4 +1,4 @@
-#!2025-08-29
+#!2025-09-05
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
 port: 7890
@@ -368,7 +368,7 @@ rule-providers:
 
 # 规则集命名+代理命名
 rules:
-  = RULE-SET,Antiads,REJECT,no-resolve
+  - RULE-SET,Antiads,REJECT,no-resolve
   - RULE-SET,Apple,苹果服务,no-resolve
   - RULE-SET,BiliBili,哔哩哔哩,no-resolve
   - RULE-SET,Copilot,Copilot,no-resolve
