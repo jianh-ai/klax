@@ -282,7 +282,7 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/Antiads.list"
+    url: "https://cdn.jsdelivr.net/gh/jianh-ai/klax@main//rule/Antiads.list"
     path: ./ruleset/Antiads.list
     interval: 86400
 
