@@ -19,10 +19,10 @@ tcp-concurrent: true
 
 # 远程订阅
 proxy-providers:
-  # 鱼鱼
+  # 69
   provider1:
     type: http
-    url: "https://qtmbwgk9.cnmnmsl.top/qiuqiule/biefengwo/wuwuwu/?token=3ec4622d8c5cd7cab1ef5f2aa964eb0d"
+    url: "https://checkhere.top/link/gbWu1r2etF2vVp5b?"
     interval: 86400
     path: ./provider1.yaml
     health-check:
@@ -33,7 +33,7 @@ proxy-providers:
   # 农夫
   provider2:
     type: http
-    url: "https://1.nfsqttt.us/nfsq/?token=f73c274e8c87851f21ee29d2bf1878a2"
+    url: "https://raw.githubusercontent.com/jianh-ai/klax/refs/heads/main/subs/nfsq/?token=NnFMEUkTHC4cO6TtzL-mAWHRkcxOD-DI"
     interval: 86400
     path: ./provider2.yaml
     health-check:
