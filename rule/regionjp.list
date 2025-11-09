@@ -1,13 +1,29 @@
 # NAME: JP
 # AUTHOR: jianh-ai
 # REPO:
-# UPDATED: 2025-08-06
-# DOMAIN: 0
-# DOMAIN-KEYWORD: 0
-# DOMAIN-SUFFIX: 5
-# TOTAL: 5
+# UPDATED: 
+
+# dlsite
+DOMAIN-SUFFIX,dlsite.com
+DOMAIN-SUFFIX,dlsite.jp
+DOMAIN-SUFFIX,ci-en.jp
+
+# fanza
 DOMAIN-SUFFIX,dmm.co.jp
+DOMAIN-SUFFIX,dmm.com
+
+# kadokawa
 DOMAIN-SUFFIX,bookwalker.jp
+DOMAIN-SUFFIX,cdn.kdkw.jp
+DOMAIN-SUFFIX,kadokawa.co.jp
+# DOMAIN-SUFFIX,static.kadokawa.co.jp
+
+# misskey
 DOMAIN-SUFFIX,misskey.io
 DOMAIN-SUFFIX,misskeyusercontent.jp
-DOMAIN-SUFFIX,family.co.jp
+
+# nijiyome
+DOMAIN-SUFFIX,nijiyome.jp
+
+# pixiv
+DOMAIN-SUFFIX,pixiv.net
