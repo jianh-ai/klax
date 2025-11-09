@@ -1,4 +1,4 @@
-#!2025-10-14
+#!2025-11-09
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -22,7 +22,7 @@ proxy-providers:
   # 69
   provider1:
     type: http
-    url: "https://checkhere.top/link/gbWu1r2etF2vVp5b?"
+    url: "https://checkhere.top/link/gbWu1r2etF2vVp5b?clash=1"
     interval: 86400
     path: ./provider1.yaml
     health-check:
@@ -33,7 +33,7 @@ proxy-providers:
   # 农夫
   provider2:
     type: http
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/refs/heads/main/subs/nfsq/?token=NnFMEUkTHC4cO6TtzL-mAWHRkcxOD-DI"
+    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/subs/nfsq/%3Ftoken%3DNnFMEUkTHC4cO6TtzL-mAWHRkcxOD-DI"
     interval: 86400
     path: ./provider2.yaml
     health-check:
