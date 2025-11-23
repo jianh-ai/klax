@@ -1,4 +1,4 @@
-#!2025-11-09
+#!2025-11-23
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -19,17 +19,17 @@ tcp-concurrent: true
 
 # 远程订阅
 proxy-providers:
-  # 69
+  # 牛牛
   provider1:
     type: http
-    url: "https://checkhere.top/link/gbWu1r2etF2vVp5b?clash=1"
+    url: "http://8vpn.top:20001/sub/d4937554b2ef40c3/sixvpnbot"
     interval: 86400
     path: ./provider1.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-
+      
   # 鱼鱼
   provider2:
     type: http
@@ -72,8 +72,11 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
   fallback:
+    - https://doh.dns.sb/dns-query
+    - https://dns.cloudflare.com/dns-query
     - tls://8.8.4.4
     - tls://1.1.1.1
+
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -81,6 +84,22 @@ dns:
       - 240.0.0.0/4
 
 proxies:
+  - name: "niuniu1"
+    type: ss
+    server: niuniunet.gdufds.xyz
+    port: 24014
+    cipher: chacha20-ietf-poly1305
+    password: "210be251a5034284"
+    udp: true
+
+  - name: "niuniu2"
+    type: ss
+    server: ct2.xcone.xyz
+    port: 59236
+    cipher: chacha20-ietf-poly1305
+    password: "210be251a5034284"
+    udp: true
+
 # 代理面板
 proxy-groups:
   # 代理命名
@@ -94,7 +113,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: 港|🇭🇰|HK|(?i)Hong
-    url: "http://www.gstatic.com/generate_204"
+    url: http://www.gstatic.com/generate_204
     interval: 300
 
   - name: 狮城自动
@@ -105,7 +124,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: 新|🇸🇬|狮|SG|(?i)Singapore
-    url: "http://www.gstatic.com/generate_204"
+    url: http://www.gstatic.com/generate_204
     interval: 300
       
   - name: 日本自动
@@ -116,7 +135,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: 日|东京|🇯🇵|JP|(?i)Japan
-    url: "http://www.gstatic.com/generate_204"
+    url: http://www.gstatic.com/generate_204
     interval: 300
 
   - name: 台湾自动
@@ -127,7 +146,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
-    url: "http://www.gstatic.com/generate_204"
+    url: http://www.gstatic.com/generate_204
     interval: 300
 
   - name: 美国自动
@@ -138,9 +157,17 @@ proxy-groups:
       - provider2
       - provider3
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
-    url: "http://www.gstatic.com/generate_204"
+    url: http://www.gstatic.com/generate_204
     interval: 300
-    
+  
+  - name: 自动跳转
+    type: url-test
+    proxies:
+      - niuniu1
+      - niuniu2
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
   # 手动切换
   - name: 香港手动
     type: select
@@ -221,19 +248,6 @@ proxy-groups:
       - 狮城手动
       - 美国手动
 
-  # - name: YouTube
-  #   type: select
-  #   icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/YouTube.png
-  #   proxies:
-  #     - 香港自动
-  #     - 狮城自动
-  #     - 日本自动
-  #     - 美国自动
-  #     - 香港手动
-  #     - 狮城手动
-  #     - 日本手动
-  #     - 美国手动
-
   - name: 哔哩哔哩
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Bilibili.png
@@ -250,19 +264,6 @@ proxy-groups:
     proxies:
       - DIRECT
 
-  # - name: 国外网站
-  #   type: select
-  #   icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Global.png
-  #   proxies:
-  #     - 香港自动
-  #     - 狮城自动
-  #     - 日本自动
-  #     - 美国自动
-  #     - 香港手动
-  #     - 狮城手动
-  #     - 日本手动
-  #     - 美国手动     
-
   - name: 国内网站
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Domestic.png
@@ -278,7 +279,7 @@ proxy-groups:
       - 日本自动
       - 美国自动
       - 台湾自动
-
+     
 # 规则集
 rule-providers:
   # 规则集命名
@@ -354,14 +355,6 @@ rule-providers:
     path: ./ruleset/regionus.list
     interval: 86400
 
-  # YouTube:
-  #   type: http
-  #   behavior: classical
-  #   format: text
-  #   url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/YouTube.list"
-  #   path: ./ruleset/YouTube.list
-  #   interval: 86400
-
 # 规则集命名+代理命名
 rules:
   - RULE-SET,Antiads,REJECT,no-resolve
@@ -373,7 +366,7 @@ rules:
   - RULE-SET,regioncn,国内网站,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
   - RULE-SET,regionus,美国自动,no-resolve
-  # - RULE-SET,YouTube,YouTube,no-resolve
+  - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
   - GEOIP,Lan,DIRECT,no-resolve
-  - GEOIP,CN,国内网站,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
   - MATCH,兜底分流
