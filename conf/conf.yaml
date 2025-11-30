@@ -1,4 +1,4 @@
-#!2025-11-23
+#!2025-11-09
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -341,7 +341,7 @@ rule-providers:
 
   regionjp:
     type: http
-    behavior: domain
+    behavior: classical
     format: text
     url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/regionjp.list"
     path: ./ruleset/regionjp.list
@@ -349,7 +349,7 @@ rule-providers:
 
   regionus:
     type: http
-    behavior: domain
+    behavior: classical
     format: text
     url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/regionus.list"
     path: ./ruleset/regionus.list
