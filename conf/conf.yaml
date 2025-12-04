@@ -22,7 +22,7 @@ proxy-providers:
   # 牛牛
   provider1:
     type: http
-    url: "http://8vpn.top:20001/sub/d4937554b2ef40c3/sixvpnbot"
+    url: "http://8vpn.top:20001/sub/8517b4b168b44471/sixvpnbot"
     interval: 86400
     path: ./provider1.yaml
     health-check:
