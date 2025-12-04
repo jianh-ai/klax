@@ -98,17 +98,17 @@ proxies:
   - name: "niuniu1"
     type: ss
     server: shct.xcuuu.cn
-    port: 24014
+    port: 28631
     cipher: chacha20-ietf-poly1305
     password: "c0dcb7bad1a54b31"
     udp: true
 
   - name: "niuniu2"
     type: ss
-    server: ct2.xcone.xyz
-    port: 59236
+    server: shct.xcuuu.cn
+    port: 17459
     cipher: chacha20-ietf-poly1305
-    password: "210be251a5034284"
+    password: "c0dcb7bad1a54b31"
     udp: true
 
 # 代理面板
