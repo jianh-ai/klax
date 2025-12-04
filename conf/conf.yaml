@@ -100,7 +100,7 @@ proxies:
     server: shct.xcuuu.cn
     port: 24014
     cipher: chacha20-ietf-poly1305
-    password: "210be251a5034284"
+    password: "c0dcb7bad1a54b31"
     udp: true
 
   - name: "niuniu2"
