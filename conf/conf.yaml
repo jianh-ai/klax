@@ -212,6 +212,7 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
+      - provider4
     filter: 日|东京|🇯🇵|JP|(?i)Japan
      
   - name: 台湾手动
