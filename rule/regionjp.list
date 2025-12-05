@@ -5,8 +5,6 @@
 
 # dlsite
 DOMAIN-SUFFIX,dlsite.com
-DOMAIN-SUFFIX,dlsite.jp
-DOMAIN-SUFFIX,ci-en.jp
 
 # fanza
 DOMAIN-SUFFIX,dmm.co.jp
@@ -14,16 +12,11 @@ DOMAIN-SUFFIX,dmm.com
 
 # kadokawa
 DOMAIN-SUFFIX,bookwalker.jp
-DOMAIN-SUFFIX,cdn.kdkw.jp
 DOMAIN-SUFFIX,kadokawa.co.jp
-# DOMAIN-SUFFIX,static.kadokawa.co.jp
 
 # misskey
 DOMAIN-SUFFIX,misskey.io
-DOMAIN-SUFFIX,misskeyusercontent.jp
-
-# nijiyome
-DOMAIN-SUFFIX,nijiyome.jp
+DOMAIN-SUFFIX,misskeyusercontent.com
 
 # pixiv
 DOMAIN-SUFFIX,pixiv.net
