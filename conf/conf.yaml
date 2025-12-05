@@ -212,7 +212,6 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
-      - provider4
     filter: 日|东京|🇯🇵|JP|(?i)Japan
      
   - name: 台湾手动
@@ -258,15 +257,39 @@ proxy-groups:
       - 日本手动
       - 美国手动
 
+  - name: Google
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Google.png
+    proxies:
+      - 香港自动
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 香港手动
+      - 狮城手动
+      - 日本手动
+      - 美国手动
+
   - name: Gemini
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Gemini.png
     proxies:
-      - 香港自动
       - 狮城自动
+      - 日本自动
       - 美国自动
-      - 香港手动
       - 狮城手动
+      - 日本手动
+      - 美国手动
+
+  - name: TikTok
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TikTok.png
+    proxies:
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 狮城手动
+      - 日本手动
       - 美国手动
 
   - name: 哔哩哔哩
@@ -304,28 +327,20 @@ proxy-groups:
 # 规则集
 rule-providers:
   # 规则集命名
-  Antiads:
+  18comic:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main//rule/Antiads.list"
-    path: ./ruleset/Antiads.list
+    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/18comic.list"
+    path: ./ruleset/18comic.list
     interval: 86400
 
-  Apple:
+  adblock:
     type: http
-    behavior: classical
+    behavior: domain
     format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/Apple.list"
-    path: ./ruleset/Apple.list
-    interval: 86400
-
-  BiliBili:
-    type: http
-    behavior: classical
-    format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/BiliBili.list"
-    path: ./ruleset/BiliBili.list
+    url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml"
+    path: ./ruleset/adblock.list
     interval: 86400
 
   Copilot:
@@ -378,16 +393,20 @@ rule-providers:
 
 # 规则集命名+代理命名
 rules:
-  - RULE-SET,Antiads,REJECT,no-resolve
-  - RULE-SET,Apple,苹果服务,no-resolve
-  - RULE-SET,BiliBili,哔哩哔哩,no-resolve
+  - RULE-SET,18comic,REJECT,no-resolve
+  - RULE-SET,adblock,REJECT,no-resolve
+  - GEOSITE,apple,苹果服务,no-resolve
+  - GEOSITE,bilibili,哔哩哔哩,no-resolve
   - RULE-SET,Copilot,Copilot,no-resolve
+  - GEOSITE,ehentai,美国自动,no-resolve
   - RULE-SET,Gemini,Gemini,no-resolve
+  - GEOSITE,google,Google,no-resolve
   - RULE-SET,OpenAI,ChatGPT,no-resolve
-  - RULE-SET,regioncn,国内网站,no-resolve
+  - GEOSITE,tiktok,TikTok,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
-  - RULE-SET,regionus,美国自动,no-resolve
   - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
-  - GEOIP,Lan,DIRECT,no-resolve
-  - GEOIP,CN,DIRECT,no-resolve
+  - GEOIP,JP,日本自动
+  # - GEOIP,Lan,DIRECT
+  - GEOSITE,CN,DIRECT
+  - GEOIP,CN,DIRECT
   - MATCH,兜底分流
