@@ -17,6 +17,15 @@ external-controller: 127.0.0.1:9090
 unified-delay: true
 tcp-concurrent: true
 
+# 订阅引用
+use: &use
+  type: select
+  use:
+    - provider1
+    - provider2
+    - provider3
+    - provider4
+
 # 远程订阅
 proxy-providers:
   # 牛牛
@@ -62,6 +71,10 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+    
+profile:
+  store-selected: false
+  store-fake-ip: true
 
 dns:
   enable: true
@@ -69,25 +82,34 @@ dns:
   listen: 0.0.0.0:1053
   ipv6: true
   default-nameserver:
-    - system
     - 223.5.5.5
     - 119.29.29.29
+    - 114.114.114.114
     - 8.8.4.4
     - 1.1.1.1
+    - system
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '+.lan'
+    - '+.local'
     - localhost.ptlogin2.qq.com
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
+  nameserver-policy:
+    "geosite:cn,private":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
+    "geosite:!cn,!private": 
+      - "tls://dns.google"
+      - "tls://cloudflare-dns.com"
+
   fallback:
     - https://doh.dns.sb/dns-query
     - https://dns.cloudflare.com/dns-query
     - tls://8.8.4.4
     - tls://1.1.1.1
-
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -119,11 +141,7 @@ proxy-groups:
   - name: 香港自动
     type: url-test
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/HongKong.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 港|🇭🇰|HK|(?i)Hong
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -131,11 +149,7 @@ proxy-groups:
   - name: 狮城自动
     type: url-test
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Singapore.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 新|🇸🇬|狮|SG|(?i)Singapore
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -143,11 +157,7 @@ proxy-groups:
   - name: 日本自动
     type: url-test
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Japan.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 日|东京|🇯🇵|JP|(?i)Japan
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -155,11 +165,7 @@ proxy-groups:
   - name: 台湾自动
     type: url-test
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -167,11 +173,7 @@ proxy-groups:
   - name: 美国自动
     type: url-test
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/UnitedStates.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -188,21 +190,13 @@ proxy-groups:
   - name: 香港手动
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/HongKong.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 港|🇭🇰|HK|(?i)Hong
 
   - name: 狮城手动
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Singapore.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 新|🇸🇬|狮|SG|(?i)Singapore
       
   - name: 日本手动
@@ -217,38 +211,19 @@ proxy-groups:
   - name: 台湾手动
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
 
   - name: 美国手动
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/UnitedStates.png
-    use:
-      - provider1
-      - provider2
-      - provider3
-      - provider4
+    <<: *use
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
 
   # 分流节点
   - name: ChatGPT
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/ChatGPT.png
-    proxies:
-      - 狮城自动
-      - 日本自动
-      - 美国自动
-      - 狮城手动
-      - 日本手动
-      - 美国手动
-
-  - name: Copilot
-    type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Copilot.png
     proxies:
       - 狮城自动
       - 日本自动
@@ -280,7 +255,7 @@ proxy-groups:
       - 狮城手动
       - 日本手动
       - 美国手动
-
+      
   - name: TikTok
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TikTok.png
@@ -353,10 +328,18 @@ rule-providers:
 
   Gemini:
     type: http
-    behavior: domain
+    behavior: classical
     format: text
     url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/Gemini.list"
     path: ./ruleset/Gemini.list
+    interval: 86400
+
+  Google:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/Google.list"
+    path: ./ruleset/Google.list
     interval: 86400
 
   OpenAI:
@@ -367,12 +350,12 @@ rule-providers:
     path: ./ruleset/OpenAI.list
     interval: 86400
 
-  regioncn:
+  YoutubeMusic:
     type: http
-    behavior: domain
+    behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/regioncn.list"
-    path: ./ruleset/regioncn.list
+    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/YoutubeMusic.list"
+    path: ./ruleset/YoutubeMusic.list
     interval: 86400
 
   regionjp:
@@ -383,30 +366,23 @@ rule-providers:
     path: ./ruleset/regionjp.list
     interval: 86400
 
-  regionus:
-    type: http
-    behavior: classical
-    format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/regionus.list"
-    path: ./ruleset/regionus.list
-    interval: 86400
-
 # 规则集命名+代理命名
 rules:
   - RULE-SET,18comic,REJECT,no-resolve
   - RULE-SET,adblock,REJECT,no-resolve
   - GEOSITE,apple,苹果服务,no-resolve
   - GEOSITE,bilibili,哔哩哔哩,no-resolve
-  - RULE-SET,Copilot,Copilot,no-resolve
   - GEOSITE,ehentai,美国自动,no-resolve
   - RULE-SET,Gemini,Gemini,no-resolve
-  - GEOSITE,google,Google,no-resolve
+  - RULE-SET,Google,Google,no-resolve
   - RULE-SET,OpenAI,ChatGPT,no-resolve
+  - GEOSITE,spotify,日本自动,no-resolve
   - GEOSITE,tiktok,TikTok,no-resolve
+  - RULE-SET,YoutubeMusic,日本自动,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
   - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
+  - GEOSITE,cn,DIRECT
+  - GEOSITE,geolocation-!cn,兜底分流
   - GEOIP,JP,日本自动
-  # - GEOIP,Lan,DIRECT
-  - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,兜底分流
