@@ -351,6 +351,14 @@ rule-providers:
     path: ./ruleset/YoutubeMusic.list
     interval: 86400
 
+  regioncn:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/regioncn.list"
+    path: ./ruleset/regionjp.list
+    interval: 86400
+
   regionjp:
     type: http
     behavior: classical
@@ -373,6 +381,7 @@ rules:
   - GEOSITE,tiktok,TikTok,no-resolve
   - GEOSITE,twitter,Twitter,no-resolve
   - RULE-SET,YoutubeMusic,日本自动,no-resolve
+  - RULE-SET,regioncn,DIRECT,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
   - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
   - GEOSITE,cn,DIRECT
