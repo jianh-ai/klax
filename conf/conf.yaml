@@ -319,14 +319,6 @@ rule-providers:
     path: ./ruleset/adblock.list
     interval: 86400
 
-  Copilot:
-    type: http
-    behavior: classical
-    format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/Copilot.list"
-    path: ./ruleset/Copilot.list
-    interval: 86400
-
   Gemini:
     type: http
     behavior: classical
