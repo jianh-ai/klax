@@ -1,4 +1,4 @@
-#!2025-12-04
+#!2025-12-06
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -71,10 +71,6 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-    
-profile:
-  store-selected: false
-  store-fake-ip: true
 
 dns:
   enable: true
@@ -84,7 +80,6 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-    - 114.114.114.114
     - 8.8.4.4
     - 1.1.1.1
     - system
@@ -92,19 +87,10 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '+.lan'
-    - '+.local'
     - localhost.ptlogin2.qq.com
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-  nameserver-policy:
-    "geosite:cn,private":
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
-    "geosite:!cn,!private": 
-      - "tls://dns.google"
-      - "tls://cloudflare-dns.com"
-
   fallback:
     - https://doh.dns.sb/dns-query
     - https://dns.cloudflare.com/dns-query
@@ -202,10 +188,7 @@ proxy-groups:
   - name: 日本手动
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Japan.png
-    use:
-      - provider1
-      - provider2
-      - provider3
+    <<: *use
     filter: 日|东京|🇯🇵|JP|(?i)Japan
      
   - name: 台湾手动
@@ -228,22 +211,6 @@ proxy-groups:
       - 狮城自动
       - 日本自动
       - 美国自动
-      - 狮城手动
-      - 日本手动
-      - 美国手动
-
-  - name: Google
-    type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Google.png
-    proxies:
-      - 香港自动
-      - 狮城自动
-      - 日本自动
-      - 美国自动
-      - 香港手动
-      - 狮城手动
-      - 日本手动
-      - 美国手动
 
   - name: Gemini
     type: select
@@ -252,10 +219,7 @@ proxy-groups:
       - 狮城自动
       - 日本自动
       - 美国自动
-      - 狮城手动
-      - 日本手动
-      - 美国手动
-      
+
   - name: TikTok
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TikTok.png
@@ -290,6 +254,31 @@ proxy-groups:
       - 香港手动
       - 台湾手动
 
+  - name: 苹果服务
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Apple.png
+    proxies:
+      - DIRECT
+
+  - name: Google
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Google.png
+    proxies:
+      - 香港自动
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 香港手动
+      - 狮城手动
+      - 日本手动
+      - 美国手动
+
+  - name: 国内网站
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Domestic.png
+    proxies:
+      - DIRECT
+
   - name: 兜底分流
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Final.png
@@ -299,6 +288,7 @@ proxy-groups:
       - 日本自动
       - 美国自动
       - 台湾自动
+      - DIRECT
      
 # 规则集
 rule-providers:
@@ -321,7 +311,7 @@ rule-providers:
 
   Gemini:
     type: http
-    behavior: classical
+    behavior: domain
     format: text
     url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/Gemini.list"
     path: ./ruleset/Gemini.list
@@ -356,7 +346,7 @@ rule-providers:
     behavior: domain
     format: text
     url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/regioncn.list"
-    path: ./ruleset/regionjp.list
+    path: ./ruleset/regioncn.list
     interval: 86400
 
   regionjp:
@@ -369,23 +359,20 @@ rule-providers:
 
 # 规则集命名+代理命名
 rules:
-  - RULE-SET,18comic,REJECT,no-resolve
   - RULE-SET,adblock,REJECT,no-resolve
-  - GEOSITE,apple,DIRECT,no-resolve
+  - GEOSITE,apple,苹果服务,no-resolve
   - GEOSITE,bilibili,哔哩哔哩,no-resolve
   - GEOSITE,ehentai,美国自动,no-resolve
   - RULE-SET,Gemini,Gemini,no-resolve
-  - RULE-SET,Google,Google,no-resolve
   - RULE-SET,OpenAI,ChatGPT,no-resolve
+  - RULE-SET,Google,Google,no-resolve
   - GEOSITE,spotify,日本自动,no-resolve
   - GEOSITE,tiktok,TikTok,no-resolve
   - GEOSITE,twitter,Twitter,no-resolve
   - RULE-SET,YoutubeMusic,日本自动,no-resolve
-  - RULE-SET,regioncn,DIRECT,no-resolve
+  - RULE-SET,regioncn,国内网站,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
   - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
-  - GEOSITE,cn,DIRECT
-  - GEOSITE,geolocation-!cn,兜底分流
-  - GEOIP,JP,日本自动
+  - GEOIP,Lan,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,兜底分流
