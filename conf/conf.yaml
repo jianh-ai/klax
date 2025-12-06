@@ -1,4 +1,4 @@
-#!2025-12-04
+#!2025-12-05
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -267,6 +267,19 @@ proxy-groups:
       - 日本手动
       - 美国手动
 
+  - name: Twitter
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Twitter.png
+    proxies:
+      - 香港自动
+      - 狮城自动
+      - 日本自动
+      - 美国自动
+      - 香港手动
+      - 狮城手动
+      - 日本手动
+      - 美国手动
+
   - name: 哔哩哔哩
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Bilibili.png
@@ -276,12 +289,6 @@ proxy-groups:
       - 台湾自动
       - 香港手动
       - 台湾手动
-
-  - name: 苹果服务
-    type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Apple.png
-    proxies:
-      - DIRECT
 
   - name: 国内网站
     type: select
@@ -370,7 +377,7 @@ rule-providers:
 rules:
   - RULE-SET,18comic,REJECT,no-resolve
   - RULE-SET,adblock,REJECT,no-resolve
-  - GEOSITE,apple,苹果服务,no-resolve
+  - GEOSITE,apple,DIRECT,no-resolve
   - GEOSITE,bilibili,哔哩哔哩,no-resolve
   - GEOSITE,ehentai,美国自动,no-resolve
   - RULE-SET,Gemini,Gemini,no-resolve
@@ -378,6 +385,7 @@ rules:
   - RULE-SET,OpenAI,ChatGPT,no-resolve
   - GEOSITE,spotify,日本自动,no-resolve
   - GEOSITE,tiktok,TikTok,no-resolve
+  - GEOSITE,twitter,Twitter,no-resolve
   - RULE-SET,YoutubeMusic,日本自动,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
   - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
