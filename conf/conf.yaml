@@ -1,4 +1,4 @@
-#!2025-12-05
+#!2025-12-04
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -289,12 +289,6 @@ proxy-groups:
       - 台湾自动
       - 香港手动
       - 台湾手动
-
-  - name: 国内网站
-    type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Domestic.png
-    proxies:
-      - DIRECT
 
   - name: 兜底分流
     type: select
