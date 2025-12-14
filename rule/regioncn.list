@@ -4,18 +4,25 @@
 # UPDATED: 2025-12-14
 
 analytics.strava.com
+blzddist1-a.akamaihd.net
 cdn.angruo.com
+cdn.lilyemby.com
 client.amplifi.com
 download.jetbrains.com
+download.microsoft.com
 images-cn.ssl-images-amazon.com
 ip.istatmenus.app
 kc.kexinshe.com
-sms.imagetasks.com
-blzddist1-a.akamaihd.net
+ntservicepack.microsoft.com
 origin-a.akamaihd.ne
 origin-a.akamaihd.net
+smart.uhdnow.com
+sms.imagetasks.com
 steamcommunity-a.akamaihd.net
+tx.lilyemby.com
 weixin.com
+www.libvideo.com
+www.yxssp.com
 +.00cdn.com
 +.0123456789.com
 +.0379home.com
@@ -38,18 +45,15 @@ weixin.com
 +.116cd.net
 +.119you.com
 +.12306.com
-+.123912.com
-+.123684.com
-+.1237.com
++.123juzi.com
++.123juzi.net
++.123pan.com
 
 # 123pan
 +.123295.com
 +.123773.com
 +.123957.com
 
-+.123juzi.com
-+.123juzi.net
-+.123pan.com
 +.123u.com
 +.126.com
 +.126.link
@@ -212,7 +216,6 @@ weixin.com
 +.51jobcdn.com
 +.51meishu.com
 +.51nod.com
-+.51shizhi.com
 +.51sole.com
 +.51wendang.com
 +.51yes.com
@@ -314,7 +317,6 @@ weixin.com
 +.acctdns.net
 +.acetaffy.club
 +.acfun.tv
-+.acg.rip
 +.acg.tv
 +.acgvideo.com
 +.acm.org
@@ -335,7 +337,6 @@ weixin.com
 +.agoralab.co
 +.agrantsem.com
 +.ahitv.com
-+.antpcdn.com
 +.aiaa.org
 +.aicdn.com
 +.aichaoxing.com
@@ -343,12 +344,10 @@ weixin.com
 +.aiemy.com
 +.aiganggu.com
 +.aiketour.com
-+.ailjyk.com
 +.aiops.com
 +.aip.org
 +.aipage.com
 +.aipai.com
-+.aipasspaper.com
 +.air-matters.com
 +.air-matters.io
 +.airchangan.com
@@ -363,7 +362,6 @@ weixin.com
 +.aizhan.com
 +.ajzq.com
 +.akadns.net
-+.aki-game.com
 +.aldwx.com
 +.ali213.net
 +.aliapp.org
@@ -426,11 +424,11 @@ weixin.com
 +.aliyuncdn.com
 +.aliyuncs.com
 +.aliyundrive.com
++.aliyundrive.cloud
 +.aliyundrive.net
 +.alizhaopin.com
 +.alloyteam.com
 +.allyes.com
-+.aliyundrive.cloud
 +.alphassl.com
 +.amap.com
 +.amapauto.com
@@ -559,10 +557,30 @@ weixin.com
 +.bibaodao.com
 +.bidchance.com
 +.biddingx.com
-+.bigjpg.com
 +.bihu.com
 +.biji.com
-
++.biliapi.com
++.biliapi.net
++.bilibili.cc
++.bilibili.com
++.bilibili.net
++.bilibili.tv
++.bilibiligame.co
++.bilibiligame.net
++.bilibilipay.com
++.bilicdn1.com
++.bilicdn2.com
++.bilicdn3.com
++.bilicdn4.com
++.bilicdn5.com
++.bilicomics.com
++.biligame.co
++.biligame.com
++.biligame.net
++.biligo.com
++.biliintl.com
++.bilivideo.com
++.bilivideo.net
 +.bio-equip.com
 +.bio360.net
 +.bio4p.com
@@ -600,11 +618,11 @@ weixin.com
 +.bohejiasuqi.com
 +.bojianger.com
 +.bokecc.com
-+.book118.com
 +.boosj.com
 +.bootcdn.net
 +.bootcss.com
 +.bosera.com
++.bosszhipin.com
 +.broadcasthe.net
 +.browserleaks.com
 +.bstatic.com
@@ -742,7 +760,6 @@ weixin.com
 +.cf-ns.net
 +.cf-ns.site
 +.cf-ns.tech
-+.cfhls.top
 +.cftest7.com
 +.cftest8.com
 +.cfund108.com
@@ -839,7 +856,6 @@ weixin.com
 +.citicsf.com
 +.city8.com
 +.ciweimao.com
-+.cjjd19.com
 +.cjol.com
 +.cjsc.com
 +.clarivate.com
@@ -1102,7 +1118,6 @@ weixin.com
 +.dcarvod.com
 +.dcdapp.com
 +.dcdkjx.com
-+.dcloud.io
 +.dct-cloud.com
 +.dd373.com
 +.ddmogo.com
@@ -1149,11 +1164,11 @@ weixin.com
 +.diyiyou.com
 +.dj99.com
 +.dl-vip.pcfaster.baidu.co.th
++.dl.delivery.mp.microsoft.com
 +.dler.cloud
 +.dlgslb.net
 +.dlnel.com
 +.dlnel.org
-+.dmpdmp.com
 +.dmzj.com
 +.dns.pub
 +.dnspod.com
@@ -1185,7 +1200,6 @@ weixin.com
 +.douban.com
 +.douban.fm
 +.doubanio.com
-+.doubao.com
 +.douxie.com
 +.douyin.com
 +.douyincdn.com
@@ -1532,13 +1546,11 @@ weixin.com
 +.hazq.com
 +.hbooker.com
 +.hczq.com
-+.hc-cdn.com
 +.hdbits.org
 +.hdchina.org
 +.hdcmct.org
 +.hddolby.com
 +.hdhome.org
-+.hdsky.me
 +.hdslb.com
 +.hdslb.org
 +.hdyxgame.com
@@ -1560,6 +1572,7 @@ weixin.com
 +.heytapdownload.com
 +.heytapimage.com
 +.heytapmobi.com
++.heytea-co.com
 +.heytea.com
 +.hftfund.com
 +.hhtravel.com
@@ -1737,7 +1750,6 @@ weixin.com
 +.ieee.org
 +.iemiq.com
 +.iesdouyin.com
-+.ietheivaicai.com
 +.ifanr.com
 +.ifanr.in
 +.ifanrusercontent.com
@@ -1779,7 +1791,6 @@ weixin.com
 +.infoqstatic.com
 +.inftab.com
 +.intltencentcos.com
-+.inutan.com
 +.iop.org
 +.ip-cdn.com
 +.ip.la
@@ -1792,7 +1803,6 @@ weixin.com
 +.ipplus360.com
 +.iprdp.net
 +.ipssh.net
-+.ipv6-test.com
 +.iq.com
 +.iqiyi.com
 +.iqiyipic.com
@@ -1946,6 +1956,7 @@ weixin.com
 +.jiazhao.com
 +.jibencaozuo.com
 +.jidian.im
++.jiedaibao.gs
 +.jiemeng8.com
 +.jiemian.com
 +.jikeiot.cloud
@@ -2092,8 +2103,6 @@ weixin.com
 +.kunlunvi.com
 +.kunlunwe.com
 +.kuqin.com
-+.kurogame.com
-+.kurogame.xyz
 +.kuyiso.com
 +.kuyunbo.club
 +.kwaizt.com
@@ -2216,6 +2225,8 @@ weixin.com
 +.lsplayer.com
 +.lu.com
 +.lucifr.com
++.luckincdn.com
++.luckincoffee.com
 +.luckincoffeecdn.com
 +.luckyair.net
 +.ludashi.com
@@ -2237,6 +2248,7 @@ weixin.com
 +.lxjapp.com
 +.lxway.com
 +.ly.com
++.m-team.cc
 +.m1.run
 +.m6.run
 +.m9.run
@@ -2311,7 +2323,7 @@ weixin.com
 +.miaopai.com
 +.miaostreet.com
 +.miaozhen.com
-
++.microsoftonline.com
 +.midasbuy.com
 +.miercn.com
 +.migucloud.com
@@ -2366,7 +2378,7 @@ weixin.com
 +.morganstanleyhuaxin.com
 +.moulem.com
 +.mpg.de
-#+.ms
++.ms
 +.msanjia.com
 +.msauth.net
 +.mscbsc.com
@@ -2383,7 +2395,6 @@ weixin.com
 +.mukewang.com
 +.mumayi.com
 +.muomou.com
-+.musical.ly
 +.muwai.com
 +.muyewx.com
 +.muzhiwan.com
@@ -2397,14 +2408,12 @@ weixin.com
 +.mydown.com
 +.mydrivers.com
 +.myelasticsearch.com
-+.myhuaweicloud.com
 +.myhwcdn.com
 +.myhwcloudlive.com
 +.myhwclouds.com
 +.myilibrary.com
 +.myip.la
 +.myoppo.com
-+.mypitaya.com
 +.mypaas.com
 +.myqcloud.com
 +.myshow360.net
@@ -2477,7 +2486,6 @@ weixin.com
 +.ol-cdn.com
 +.ol-img.com
 +.oldboyedu.com
-+.omofuns.com
 +.oncdp.com
 +.oneapm.com
 +.onegreen.net
@@ -2490,7 +2498,6 @@ weixin.com
 +.onlinedown.net
 +.onlinesjtu.com
 +.onlylady.com
-+.ooklaserver.net
 +.opdown.com
 +.open.cd
 +.openapp.run
@@ -2535,9 +2542,6 @@ weixin.com
 +.paipaibang.com
 +.pangolin-sdk-toutiao.com
 +.paopaoche.net
-+.paperpass.com
-+.paperred.com
-+.paperyy.com
 +.papocket.com
 +.passthepopcorn.me
 +.pc6.com
@@ -2574,7 +2578,6 @@ weixin.com
 +.pn1waq.com
 +.pnas.org
 +.pniao.com
-+.pocketuni.net
 +.polyv.net
 +.powerapp.io
 +.pplive.com
@@ -2648,7 +2651,6 @@ weixin.com
 +.qichamao.com
 +.qidian.com
 +.qie.tv
-+.qiekj.com
 +.qifeiye.com
 +.qihoo.com
 +.qihoo.net
@@ -2684,6 +2686,7 @@ weixin.com
 +.qq.cn.com
 +.qq.com
 +.qq.design
++.qq.net
 +.qq.wang
 +.qq.xn--fiqs8s
 +.qq163.com
@@ -2715,7 +2718,6 @@ weixin.com
 +.rarbg.to
 +.raychase.net
 +.rdfybk.com
-+.rdt.tfogc.com
 +.readnovel.com
 +.realcybertron.com
 +.realme.com
@@ -2745,7 +2747,7 @@ weixin.com
 +.runoob.com
 +.runsheng.com
 +.rzrc114.com
-
++.s-microsoft.com
 +.s-reader.com
 +.sa-brazil-1.myhuaweicloud.com
 +.saasops.tech
@@ -2818,7 +2820,6 @@ weixin.com
 +.shssp.org
 +.shuidichou.com
 +.shuidihuzhu.com
-+.shujupie.com
 +.shumensy.com
 +.shuoshuokong.com
 +.shuqi.com
@@ -3046,8 +3047,6 @@ weixin.com
 +.tenpay.com
 +.tenxcloud.com
 +.test-cignacmb.com
-+.test-ipv4.com
-+.test-ipv6.com
 +.testwaf.com
 +.texasholdemcup.com
 +.texasholdemcup.net
@@ -3099,7 +3098,6 @@ weixin.com
 +.tmtsmartrun.com
 +.tmzvps.com
 +.tobosu.com
-+.todesk.com
 +.tom.com
 +.tongdun.net
 +.tongji.linezing.com
@@ -3223,6 +3221,7 @@ weixin.com
 +.upai.com
 +.upaiyun.com
 +.upcdn.net
++.update.microsoft.com
 +.upe.net
 +.upyun.com
 +.urselect.com
@@ -3235,7 +3234,6 @@ weixin.com
 +.uyunad.com
 +.uzzf.com
 +.v-56.com
-+.v2player.top
 +.v5875.com
 +.value500.com
 +.vamaker.com
@@ -3340,6 +3338,13 @@ weixin.com
 +.win7china.com
 +.win8.net
 +.win8china.com
++.windows.com
++.windows.net
++.windows10zj.com
++.windows7en.com
++.windowsupdate.com
++.windowsupdate.microsoft.com
++.windowszj.com
 +.winegame.net
 +.winwin7.com
 +.wishdown.com
@@ -3392,8 +3397,6 @@ weixin.com
 +.xcsc.com
 +.xdrig.com
 +.xdwan.com
-+.xed.plus
-+.xeknow.com
 +.xesimg.com
 +.xf-fund.com
 +.xfdown.com
@@ -3410,7 +3413,6 @@ weixin.com
 +.xianjiqun.com
 +.xiaobaixitong.com
 +.xiaodutv.com
-+.xiaoeknow.com
 +.xiaoe-tech.com
 +.xiaogouh5.com
 +.xiaohongshu.com
@@ -3448,7 +3450,6 @@ weixin.com
 +.xiziwang.net
 +.xjietiao.com
 +.xjoycity.com
-+.xlgxapp.com
 +.xmcdn.com
 +.xmhouse.com
 +.xn--fiq53l6wcx3kp9bc7joo6apn8a.xn--fiqs8s
@@ -3572,6 +3573,7 @@ weixin.com
 +.ypppt.com
 +.yqb.com
 +.yrz.name
++.ysepay.com
 +.yslyhr.com
 +.ysten.com
 +.ytzq.com
@@ -3711,4 +3713,3 @@ weixin.com
 +.zybang.com
 +.zyh365.com
 +.zzdtec.com
-+.zzprotect.com
