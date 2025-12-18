@@ -1,4 +1,4 @@
-#!2025-12-06
+#!2025-12-18
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -24,23 +24,11 @@ use: &use
     - provider1
     - provider2
     - provider3
-    - provider4
 
 # 远程订阅
 proxy-providers:
-  # 牛牛
-  provider1:
-    type: http
-    url: "http://8vpn.top:20001/sub/8517b4b168b44471/sixvpnbot"
-    interval: 86400
-    path: ./provider1.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-      
   # 鱼鱼
-  provider2:
+  provider1:
     type: http
     url: "https://yucdn.me/qiuqiule/biefengwo/wuwuwu/?token=3ec4622d8c5cd7cab1ef5f2aa964eb0d"
     interval: 86400
@@ -51,7 +39,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   # 良心云
-  provider3:
+  provider2:
     type: http
     url: "https://liangxin.xyz/api/v1/liangxin?OwO=4aeb4767a72e90166a820ed47afb04a3"
     interval: 86400
@@ -62,7 +50,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   # kitty 
-  provider4:
+  provider3:
     type: http
     url: "https://2.luolicon.ru/oosaka/930fdefef8c7a47c195b81e5797d5c07"
     interval: 86400
@@ -103,22 +91,6 @@ dns:
       - 240.0.0.0/4
 
 proxies:
-  - name: "niuniu1"
-    type: ss
-    server: shct.xcuuu.cn
-    port: 28631
-    cipher: chacha20-ietf-poly1305
-    password: "c0dcb7bad1a54b31"
-    udp: true
-
-  - name: "niuniu2"
-    type: ss
-    server: shct.xcuuu.cn
-    port: 17459
-    cipher: chacha20-ietf-poly1305
-    password: "c0dcb7bad1a54b31"
-    udp: true
-
 # 代理面板
 proxy-groups:
   # 代理命名
@@ -259,19 +231,19 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Apple.png
     proxies:
       - DIRECT
+      - 日本自动
+      - 美国自动
 
   - name: Google
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Google.png
     proxies:
       - 狮城自动
-      - 香港自动
       - 日本自动
-      - 美国自动
+      - 香港自动
       - 狮城手动
-      - 香港手动
       - 日本手动
-      - 美国手动
+      - 香港手动      
 
   - name: 国内网站
     type: select
@@ -373,6 +345,7 @@ rules:
   - RULE-SET,regioncn,国内网站,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
   - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
+  - GEOIP,JP,日本自动
   - GEOIP,Lan,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,兜底分流
