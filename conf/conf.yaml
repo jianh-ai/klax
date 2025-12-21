@@ -1,4 +1,4 @@
-#!2025-12-18
+#!2025-12-21
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -30,7 +30,7 @@ proxy-providers:
   # 鱼鱼
   provider1:
     type: http
-    url: "https://yucdn.me/qiuqiule/biefengwo/wuwuwu/?token=3ec4622d8c5cd7cab1ef5f2aa964eb0d"
+    url: "https://yucdn.me/qiuqiule/biefengwo/wuwuwu/3ec4622d8c5cd7cab1ef5f2aa964eb0d"
     interval: 86400
     path: ./provider2.yaml
     health-check:
@@ -230,12 +230,14 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Google.png
     proxies:
+      - 香港自动
       - 狮城自动
       - 日本自动
-      - 香港自动
+      - 美国自动
+      - 香港手动
       - 狮城手动
       - 日本手动
-      - 香港手动      
+      - 美国手动
 
   - name: 国内网站
     type: select
