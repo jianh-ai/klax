@@ -135,14 +135,6 @@ proxy-groups:
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
     url: http://www.gstatic.com/generate_204
     interval: 300
-  
-  - name: 自动跳转
-    type: url-test
-    proxies:
-      - niuniu1
-      - niuniu2
-    url: http://www.gstatic.com/generate_204
-    interval: 300
 
   # 手动切换
   - name: 香港手动
@@ -344,7 +336,6 @@ rules:
   - RULE-SET,YoutubeMusic,日本自动,no-resolve
   - RULE-SET,regioncn,国内网站,no-resolve
   - RULE-SET,regionjp,日本自动,no-resolve
-  - DOMAIN-SUFFIX,8vpn.top,自动跳转,no-resolve
   - GEOIP,JP,日本自动
   - GEOIP,Lan,DIRECT
   - GEOIP,CN,DIRECT
