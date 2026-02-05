@@ -1,7 +1,7 @@
 # NAME: regioncn
 # AUTHOR: 
 # REPO: 
-# UPDATED: 2025-12-14
+# UPDATED: 2026-02-05
 
 analytics.strava.com
 blzddist1-a.akamaihd.net
@@ -2380,7 +2380,9 @@ www.yxssp.com
 +.mpg.de
 +.ms
 +.msanjia.com
-+.msauth.net
+
+# +.msauth.net
+
 +.mscbsc.com
 +.msecnd.net
 +.mshare.cc
