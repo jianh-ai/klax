@@ -1,4 +1,4 @@
-#!2025-12-21
+#!2026-02-18
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 
@@ -23,38 +23,26 @@ use: &use
   use:
     - provider1
     - provider2
-    - provider3
 
 # 远程订阅
 proxy-providers:
-  # 鱼鱼
+  # 良心云
   provider1:
     type: http
-    url: "https://yucdn.me/qiuqiule/biefengwo/wuwuwu/3ec4622d8c5cd7cab1ef5f2aa964eb0d"
+    url: "https://liangxin.xyz/api/v1/liangxin?OwO=73bb950db23f5eebba92b8bc615e9fee"
     interval: 86400
-    path: ./provider2.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  # 良心云
-  provider2:
-    type: http
-    url: "https://liangxin.xyz/api/v1/liangxin?OwO=4aeb4767a72e90166a820ed47afb04a3"
-    interval: 86400
-    path: ./provider3.yaml
+    path: ./provider1.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
 
   # kitty 
-  provider3:
+  provider2:
     type: http
     url: "https://2.luolicon.ru/oosaka/930fdefef8c7a47c195b81e5797d5c07"
     interval: 86400
-    path: ./provider4.yaml
+    path: ./provider2.yaml
     health-check:
       enable: true
       interval: 600
@@ -120,19 +108,19 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
 
-  - name: 台湾自动
-    type: url-test
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
-    <<: *use
-    filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-
   - name: 美国自动
     type: url-test
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/UnitedStates.png
     <<: *use
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 台湾自动
+    type: url-test
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
+    <<: *use
+    filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
     url: http://www.gstatic.com/generate_204
     interval: 300
 
@@ -154,12 +142,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Japan.png
     <<: *use
     filter: 日|东京|🇯🇵|JP|(?i)Japan
-     
-  - name: 台湾手动
-    type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
-    <<: *use
-    filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
 
   - name: 美国手动
     type: select
@@ -167,18 +149,16 @@ proxy-groups:
     <<: *use
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
 
+  - name: 台湾手动
+    type: select
+    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
+    <<: *use
+    filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
+
   # 分流节点
   - name: ChatGPT
     type: select
     icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/ChatGPT.png
-    proxies:
-      - 狮城自动
-      - 日本自动
-      - 美国自动
-
-  - name: Gemini
-    type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Gemini.png
     proxies:
       - 狮城自动
       - 日本自动
@@ -275,14 +255,6 @@ rule-providers:
     path: ./ruleset/adblock.list
     interval: 86400
 
-  Gemini:
-    type: http
-    behavior: domain
-    format: text
-    url: "https://raw.githubusercontent.com/jianh-ai/klax/main/rule/Gemini.list"
-    path: ./ruleset/Gemini.list
-    interval: 86400
-
   Google:
     type: http
     behavior: classical
@@ -325,11 +297,11 @@ rule-providers:
 
 # 规则集命名+代理命名
 rules:
+  - RULE-SET,18comic,REJECT,no-resolve
   - RULE-SET,adblock,REJECT,no-resolve
   - GEOSITE,apple,苹果服务,no-resolve
   - GEOSITE,bilibili,哔哩哔哩,no-resolve
   - GEOSITE,ehentai,美国自动,no-resolve
-  - RULE-SET,Gemini,Gemini,no-resolve
   - RULE-SET,OpenAI,ChatGPT,no-resolve
   - RULE-SET,Google,Google,no-resolve
   - GEOSITE,spotify,日本自动,no-resolve
