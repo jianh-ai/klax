@@ -1,6 +1,7 @@
-#!2026-02-18
+#!2026-02-18.1
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
+#!raw=https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/conf/conf.yaml
 
 port: 7890
 socks-port: 7891
@@ -86,7 +87,7 @@ proxy-groups:
   # 自动选择
   - name: 香港自动
     type: url-test
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/HongKong.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/HongKong.png
     <<: *use
     filter: 港|🇭🇰|HK|(?i)Hong
     url: http://www.gstatic.com/generate_204
@@ -94,7 +95,7 @@ proxy-groups:
 
   - name: 狮城自动
     type: url-test
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Singapore.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Singapore.png
     <<: *use
     filter: 新|🇸🇬|狮|SG|(?i)Singapore
     url: http://www.gstatic.com/generate_204
@@ -102,7 +103,7 @@ proxy-groups:
       
   - name: 日本自动
     type: url-test
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Japan.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Japan.png
     <<: *use
     filter: 日|东京|🇯🇵|JP|(?i)Japan
     url: http://www.gstatic.com/generate_204
@@ -110,7 +111,7 @@ proxy-groups:
 
   - name: 美国自动
     type: url-test
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/UnitedStates.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/UnitedStates.png
     <<: *use
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
     url: http://www.gstatic.com/generate_204
@@ -118,7 +119,7 @@ proxy-groups:
 
   - name: 台湾自动
     type: url-test
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/TaiWan.png
     <<: *use
     filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
     url: http://www.gstatic.com/generate_204
@@ -127,38 +128,38 @@ proxy-groups:
   # 手动切换
   - name: 香港手动
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/HongKong.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/HongKong.png
     <<: *use
     filter: 港|🇭🇰|HK|(?i)Hong
 
   - name: 狮城手动
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Singapore.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Singapore.png
     <<: *use
     filter: 新|🇸🇬|狮|SG|(?i)Singapore
       
   - name: 日本手动
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Japan.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Japan.png
     <<: *use
     filter: 日|东京|🇯🇵|JP|(?i)Japan
 
   - name: 美国手动
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/UnitedStates.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/UnitedStates.png
     <<: *use
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
 
   - name: 台湾手动
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TaiWan.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/TaiWan.png
     <<: *use
     filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
 
   # 分流节点
   - name: ChatGPT
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/ChatGPT.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/ChatGPT.png
     proxies:
       - 狮城自动
       - 日本自动
@@ -166,7 +167,7 @@ proxy-groups:
 
   - name: TikTok
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/TikTok.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/TikTok.png
     proxies:
       - 狮城自动
       - 日本自动
@@ -177,7 +178,7 @@ proxy-groups:
 
   - name: Twitter
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Twitter.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Twitter.png
     proxies:
       - 香港自动
       - 狮城自动
@@ -190,7 +191,7 @@ proxy-groups:
 
   - name: 哔哩哔哩
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Bilibili.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Bilibili.png
     proxies:
       - DIRECT
       - 香港自动
@@ -200,7 +201,7 @@ proxy-groups:
 
   - name: 苹果服务
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Apple.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Apple.png
     proxies:
       - DIRECT
       - 日本自动
@@ -208,7 +209,7 @@ proxy-groups:
 
   - name: Google
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Google.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Google.png
     proxies:
       - 香港自动
       - 狮城自动
@@ -221,13 +222,13 @@ proxy-groups:
 
   - name: 国内网站
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Domestic.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Domestic.png
     proxies:
       - DIRECT
 
   - name: 兜底分流
     type: select
-    icon: https://raw.githubusercontent.com/jianh-ai/klax/main/icon/Final.png
+    icon: https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/icon/Final.png
     proxies:
       - 香港自动
       - 狮城自动
