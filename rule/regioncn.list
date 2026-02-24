@@ -5,6 +5,9 @@
 
 analytics.strava.com
 blzddist1-a.akamaihd.net
+origin-a.akamaihd.ne
+origin-a.akamaihd.net
+steamcommunity-a.akamaihd.net
 cdn.angruo.com
 cdn.lilyemby.com
 client.amplifi.com
@@ -14,15 +17,11 @@ images-cn.ssl-images-amazon.com
 ip.istatmenus.app
 kc.kexinshe.com
 ntservicepack.microsoft.com
-origin-a.akamaihd.ne
-origin-a.akamaihd.net
 smart.uhdnow.com
 sms.imagetasks.com
-steamcommunity-a.akamaihd.net
 tx.lilyemby.com
-weixin.com
 www.libvideo.com
-www.yxssp.com
+
 +.00cdn.com
 +.0123456789.com
 +.0379home.com
@@ -2711,6 +2710,7 @@ www.yxssp.com
 +.qunjielong.com
 +.quumibao.com
 +.quyaoya.com
++.qwen.ai
 +.qy.net
 +.qyer.com
 +.qyerstatic.com
@@ -3315,12 +3315,12 @@ www.yxssp.com
 +.weilaiyunxiao.com
 +.weiphone.com
 +.weiphone.net
++.weixin.com
 +.weixinbridge.com
 +.weiyangx.com
 +.weiyun.com
 +.welltrend-edu.com
 +.wenjuan.com
-+.wenku8.net
 +.wenmingban.com
 +.wenxin-ge.com
 +.werewolf.53site.com
@@ -3614,6 +3614,7 @@ www.yxssp.com
 +.yxdown.com
 +.yxhhdl.com
 +.yximgs.com
++.yxssp.com
 +.yxwsgame.com
 +.yy.com
 +.yyds.co
