@@ -1,4 +1,4 @@
-#!2026-02-18.1
+#!2026-02-22
 #!raw=https://raw.githubusercontent.com/jianh-ai/klax/main/conf/conf.yaml
 #!raw=https://cdn.jsdelivr.net/gh/jianh-ai/klax@main/conf/conf.yaml
 #!raw=https://cdn.jsdmirror.com/gh/jianh-ai/klax@main/conf/conf.yaml
@@ -24,6 +24,7 @@ use: &use
   use:
     - provider1
     - provider2
+    - provider2
 
 # 远程订阅
 proxy-providers:
@@ -44,6 +45,17 @@ proxy-providers:
     url: "https://2.luolicon.ru/oosaka/930fdefef8c7a47c195b81e5797d5c07"
     interval: 86400
     path: ./provider2.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  # ikun
+  provider3:
+    type: http
+    url: "https://fl9nc.no-mad-world.club/link/9gTe12q8wWyx5NMv?clash=3&extend=1"
+    interval: 86400
+    path: ./provider3.yaml
     health-check:
       enable: true
       interval: 600
