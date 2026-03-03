@@ -1,5 +1,5 @@
 # klax
 
-项目支持：
+support:
 `https://github.com/blackmatrix7/ios_rule_script`
 `https://github.com/Koolson/Qure`
