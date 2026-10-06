@@ -1,0 +1,12 @@
+# NAME: Bili
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2026-10-03 16:16:17
+# DOMAIN: 
+# DOMAIN-SUFFIX: 
+# IP-CIDR: 
+# PROCESS-NAME: 
+# TOTAL: 
+DOMAIN-SUFFIX,grpc.bilibili.com
+DOMAIN-SUFFIX,app.bilibili.com
+DOMAIN-SUFFIX,api.bilibili.com
